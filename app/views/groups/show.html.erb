@@ -9,13 +9,13 @@
 <h2>Transactions</h2>
 
 <div>
-  <%= link_to "NEW TRANSACTION", new_expense_path %>
+  <%= link_to "Add New Expense", new_expense_path %>
 </div>
 
 <% @group.expenses.each do |g| %>
   <div>
     <div>
-      <%= button_to "X", g, method: :delete %>
+      <%= button_to "Delete this expense", g, method: :delete %>
       <p><%= g.name %></p>
     </div>
     <p>$<%= g.amount %></p>
