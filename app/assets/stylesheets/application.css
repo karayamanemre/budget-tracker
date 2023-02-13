@@ -59,8 +59,37 @@ nav {
 }
 
 .home-page {
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
+}
+
+.home-page h1 {
+  font-style: italic;
+}
+
+.home-page div {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.home-page button {
+  cursor: pointer;
+  width: 200px;
+  padding: 10px;
+  background: var(--secondary-color);
+  border: 1px solid #ddd;
+  transition: 0.5s;
+}
+
+.home-page button:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+}
+
+.home-page button:active {
+  transform: translateY(1px);
 }
