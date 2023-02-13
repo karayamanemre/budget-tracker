@@ -1,15 +1,59 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+@import url('https://fonts.cdnfonts.com/css/proxima-nova-2');
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  font-family: 'Proxima Nova', sans-serif;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #3778c2;
+  --secondary-color: #5fb523;
+  --text-color: #434b54;
+}
+
+html {
+  font-size: 16px;
+  color: var(--text-color);
+}
+
+body {
+  min-height: 100vh;
+}
+
+img {
+  display: block;
+  width: 100px;
+  height: 100px;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2.25rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+p {
+  font-size: 1.1rem;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.home-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  aling-items: center;
+}
