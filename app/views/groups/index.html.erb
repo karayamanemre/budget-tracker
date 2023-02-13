@@ -1,0 +1,18 @@
+<p><%= notice %></p>
+
+<div>
+
+  <h1>GROUPS</h1>
+
+  <div id="groups">
+    <% @groups.each do |group| %>
+      <%= link_to group do %>
+        <%= render group %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div>
+    <%= link_to "NEW GROUP", new_group_path %>
+  </div>
+</div>

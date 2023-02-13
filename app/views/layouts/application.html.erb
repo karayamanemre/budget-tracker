@@ -11,6 +11,11 @@
   </head>
 
   <body>
+    <p><%= alert %></p>
+    <% if !user_signed_in? %>
+    <% else %>
+    <%= render 'partials/nav' %>
+    <% end %>
     <%= yield %>
   </body>
 </html>

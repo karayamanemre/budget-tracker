@@ -1,0 +1,10 @@
+<div id="<%= dom_id group %>">
+  <div>
+  <%= image_tag("#{group.icon}") %>
+    <div>
+  <p><%= group.name %></p>
+    <%= group.created_at.strftime("%d %b %Y") %>
+    </div>
+  </div>
+  <p>$<%= group.expenses.sum(:amount) %></p>
+</div>

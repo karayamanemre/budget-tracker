@@ -1,0 +1,23 @@
+<p><%= notice %></p>
+
+<%= render @group %>
+
+<div>
+<%= button_to "Delete this group", @group, method: :delete %>
+</div>
+
+<h2>Transactions</h2>
+
+<div>
+  <%= link_to "Add New Expense", new_expense_path %>
+</div>
+
+<% @group.expenses.each do |g| %>
+  <div>
+    <div>
+      <%= button_to "Delete this expense", g, method: :delete %>
+      <p><%= g.name %></p>
+    </div>
+    <p>$<%= g.amount %></p>
+  </div>
+<% end %>
