@@ -1,6 +1,6 @@
 class Expense < ApplicationRecord
-  belongs_to :user
   has_and_belongs_to_many :groups
+  belongs_to :user
 
   attr_accessor :group_id
 
