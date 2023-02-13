@@ -63,6 +63,4 @@ nav {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px solid var(--text-color);
-  width: 300px;
 }

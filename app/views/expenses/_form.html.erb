@@ -1,0 +1,34 @@
+<div>
+<%= form_with(model: expense) do |form| %>
+  <% if expense.errors.any? %>
+    <div>
+      <h2><%= pluralize(expense.errors.count, "error") %> prohibited this expense from being saved:</h2>
+
+      <ul>
+        <% expense.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :amount %>
+    <%= form.text_field :amount %>
+  </div>
+
+  <div>
+    <p>Select a category</p>
+    <%= form.select :group_id, @group.all.collect {|u| [u.name, u.id] } %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+</div>
