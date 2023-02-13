@@ -25,9 +25,8 @@ body {
 }
 
 img {
-  display: block;
-  width: 100px;
-  height: 100px;
+  width: 60px;
+  height: 60px;
 }
 
 h1 {
@@ -51,9 +50,19 @@ a {
   color: var(--text-color);
 }
 
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: var(--primary-color);
+  height: 80px;
+}
+
 .home-page {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  aling-items: center;
+  align-items: center;
+  border: 1px solid var(--text-color);
+  width: 300px;
 }
