@@ -21,7 +21,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [Budget Tracker] <a name="about-project"></a>
+# 📖 Budget Tracker <a name="about-project"></a>
 
 **Budget Tracker app** is a user-friendly mobile application for budgeting that anyone may use to keep tabs on their spending.
 
