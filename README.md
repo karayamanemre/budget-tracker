@@ -54,10 +54,10 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **[Register a user]**
-- **[Login a user]**
-- **[Create a category]**
-- **[Create a Transaction]**
+- **Register a user**
+- **Login a user**
+- **Create a category**
+- **Create a Transaction**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -93,10 +93,9 @@ Clone this repository to your desired folder:
 
 ### Install
 
-Install this project with:
+Install this project inside your folder with:
 
 ```sh
-  cd budget-tracker
   bundle install
 ```
 
