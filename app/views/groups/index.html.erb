@@ -1,15 +1,11 @@
 <nav>
-  <div class='user-info'>
-    <% if user_signed_in? %>
-      <span class="material-symbols-outlined">
-        person
-      </span>
-    <% end %>
-    <h1>Categories</h1>
-    <% if user_signed_in? %>
-      <%= link_to "logout", destroy_user_session_path, data: { turbo_method: :delete }, class:"material-symbols-outlined" %>
-    <% end %>
-  </div>
+  <% if user_signed_in? %>
+    <%= link_to "account_box", user_path(current_user), class:"material-symbols-outlined" %>
+  <% end %>
+  <h2>Categories</h2>
+  <% if user_signed_in? %>
+    <%= link_to "logout", destroy_user_session_path, data: { turbo_method: :delete }, class:"material-symbols-outlined" %>
+  <% end %>
 </nav>
 <section class='group-index-page'>
   <p><%= notice %></p>

@@ -5,6 +5,9 @@ Rails.application.routes.draw do
 
   root "static_pages#homepage"
 
-  resources :users, :expenses, :groups
+  resources :users do
+    delete :destroy, on: :member
+  end
+  resources :expenses, :groups
   
 end
