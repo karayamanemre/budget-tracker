@@ -11,7 +11,7 @@ RSpec.describe User, type: :model do
     user.valid?
     expect(user.errors[:name]).to include("can't be blank")
   end
-  
+
   it 'has many groups' do
     user = User.new(name: 'John Doe')
     group1 = user.groups.new(name: 'Group 1')
