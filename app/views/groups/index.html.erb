@@ -6,7 +6,7 @@
     <% if user_signed_in? %>
       <% name = current_user.name %>
       <% capitalized_name = name.split(" ").map { |word| word.capitalize }.join(" ") %>
-      <p>User: <%= capitalized_name %></p>
+      <p><%= capitalized_name %></p>
       <%= link_to "Sign out", destroy_user_session_path, data: { turbo_method: :delete } %>
     <% end %>
   </div>
