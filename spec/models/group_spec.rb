@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Group, type: :model do
   let(:user) { User.create(name: 'John Doe', email: 'john.doe@example.com', password: 'password') }
-  let(:group) { Group.new(name: 'Group 1', icon: 'fa fa-users', user: user) }
+  let(:group) { Group.new(name: 'Group 1', icon: 'fa fa-users', user:) }
 
   context 'validations' do
     it 'is valid with a name, icon, and user' do
@@ -31,8 +31,8 @@ RSpec.describe Group, type: :model do
     end
 
     it 'has and belongs to many expenses' do
-      expense1 = Expense.create(name: 'Expense 1', amount: 100, user: user)
-      expense2 = Expense.create(name: 'Expense 2', amount: 200, user: user)
+      expense1 = Expense.create(name: 'Expense 1', amount: 100, user:))
+      expense2 = Expense.create(name: 'Expense 2', amount: 200, user:))
       group.expenses << expense1
       group.expenses << expense2
       expect(group.expenses).to include(expense1, expense2)
