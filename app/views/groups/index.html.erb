@@ -1,15 +1,17 @@
 <nav>
-  <h1>Categories</h1>
-</nav>
-<section class='group-index-page'>
   <div class='user-info'>
     <% if user_signed_in? %>
-      <% name = current_user.name %>
-      <% capitalized_name = name.split(" ").map { |word| word.capitalize }.join(" ") %>
-      <p><%= capitalized_name %></p>
-      <%= link_to "Sign out", destroy_user_session_path, data: { turbo_method: :delete } %>
+      <span class="material-symbols-outlined">
+        person
+      </span>
+    <% end %>
+    <h1>Categories</h1>
+    <% if user_signed_in? %>
+      <%= link_to "logout", destroy_user_session_path, data: { turbo_method: :delete }, class:"material-symbols-outlined" %>
     <% end %>
   </div>
+</nav>
+<section class='group-index-page'>
   <p><%= notice %></p>
   <div id="groups" class='groups'>
     <% @groups.each do |group| %>
