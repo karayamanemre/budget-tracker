@@ -11,7 +11,7 @@ AllCops:
   DisplayCopNames: true
 
 Layout/LineLength:
-  Max: 120
+  Max: 160
 Metrics/MethodLength:
   Include:
     - 'app/controllers/*'
@@ -40,6 +40,8 @@ Style/DefWithParentheses:
   Enabled: false
 Style/FrozenStringLiteralComment:
   EnforcedStyle: never
+Style/BlockComments:
+  Enabled: false
 
 Layout/HashAlignment:
   EnforcedColonStyle: key
@@ -52,9 +54,13 @@ Lint/RaiseException:
   Enabled: false
 Lint/StructNewOverride:
   Enabled: false
+Lint/UselessAssignment:
+  Enabled: false
 Style/HashEachMethods:
   Enabled: false
 Style/HashTransformKeys:
   Enabled: false
 Style/HashTransformValues:
+  Enabled: false
+Style/HashSyntax:
   Enabled: false
