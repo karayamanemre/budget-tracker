@@ -1,0 +1,26 @@
+<nav>
+  <div class='user-info'>
+    <% if user_signed_in? %>
+      <span class="material-symbols-outlined">
+        person
+      </span>
+    <% end %>
+    <h1>Categories</h1>
+    <% if user_signed_in? %>
+      <%= link_to "logout", destroy_user_session_path, data: { turbo_method: :delete }, class:"material-symbols-outlined" %>
+    <% end %>
+  </div>
+</nav>
+<section class='group-index-page'>
+  <p><%= notice %></p>
+  <div id="groups" class='groups'>
+    <% @groups.each do |group| %>
+      <%= link_to group do %>
+        <%= render group %>
+      <% end %>
+    <% end %>
+  </div>
+</section>
+<div class='category-btn'>
+  <%= button_to 'ADD CATEGORY', new_group_path, method: :get %>
+</div>

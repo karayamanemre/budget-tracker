@@ -1,0 +1,25 @@
+<nav>
+  <div class='user-info'>
+    <%= link_to "arrow_back", groups_path, class:"material-symbols-outlined" %>
+    <h1>Transactions</h1>
+    <% if user_signed_in? %>
+      <%= link_to "logout", destroy_user_session_path, data: { turbo_method: :delete }, class:"material-symbols-outlined" %>
+    <% end %>
+  </div>
+</nav>
+<section class='group-show-page'>
+  <p><%= notice %></p>
+  <%= render @group %>
+  <%= button_to "Remove Category", @group, method: :delete, class:'delete-btn' %>
+
+  <% @group.expenses.order(created_at: :desc).each do |g| %>
+  <div class='transaction-info'>
+    <p><%= g.name.capitalize %></p>
+    <p>$<%= g.amount %></p>
+    <%= link_to "delete", g, data: { turbo_method: :delete }, class:'material-symbols-outlined' %>
+  </div>
+  <% end %>
+</section>
+<div class='category-btn'>
+  <%= button_to 'ADD NEW TRANSACTION', new_expense_path, method: :get %>
+</div>

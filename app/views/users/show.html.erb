@@ -1,0 +1,7 @@
+<p><%= notice %></p>
+<%= render @user %>
+<div>
+  <%= link_to "Edit this user", edit_user_path(@user) %> |
+  <%= link_to "Back to users", users_path %>
+  <%= button_to "Delete this user", @user, method: :delete %>
+</div>

@@ -1,0 +1,228 @@
+@import url('https://fonts.cdnfonts.com/css/proxima-nova-2');
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  font-family: 'Proxima Nova', sans-serif;
+  box-sizing: border-box;
+  color: var(--text-color);
+}
+
+:root {
+  --primary-color: #3778c2;
+  --secondary-color: #5fb523;
+  --text-color: #434b54;
+}
+
+html {
+  font-size: 16px;
+  color: var(--text-color);
+  background: #f0f3f2;
+}
+
+body {
+  min-height: 100vh;
+}
+
+img {
+  width: 80px;
+  height: 80px;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+p {
+  font-size: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 1rem;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary-color);
+  height: 80px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+nav h1 {
+  color: #fff;
+}
+
+.home-page,
+.sign-in-page,
+.sign-up-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 100px;
+  gap: 20px;
+}
+
+.home-page div {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+button,
+input[type='submit'] {
+  cursor: pointer;
+  width: 200px;
+  padding: 10px;
+  background: var(--secondary-color);
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  transition: 0.5s;
+  color: #fff;
+}
+
+button:hover,
+input[type='submit']:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+}
+
+button:active,
+input[type='submit']:active {
+  transform: translateY(1px);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input,
+select {
+  width: 200px;
+  padding: 10px;
+}
+
+.group-index-page,
+.group-show-page {
+  margin: 90px 0;
+  padding-bottom: 80px;
+}
+
+.user-info {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  color: #fff;
+}
+
+.user-info a,
+.user-info span {
+  color: #fff;
+}
+
+.groups {
+  display: flex;
+  flex-direction: column;
+}
+
+.group-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background: #fff;
+  margin: 10px;
+}
+
+.category-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.category-info p {
+  color: #a5a2a2;
+}
+
+.date {
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+.category-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background: var(--secondary-color);
+  height: 80px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.category-btn button {
+  width: 300px;
+  height: 60px;
+}
+
+.delete-btn {
+  width: 150px;
+  height: 40px;
+  align-self: center;
+}
+
+.transaction-page {
+  margin-top: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.transaction-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background: #fff;
+  margin: 10px;
+}
+
+.expense-delete-btn {
+  width: 75px;
+}
+
+.new-group-page {
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.new-group-page a {
+  margin: 20px;
+}
