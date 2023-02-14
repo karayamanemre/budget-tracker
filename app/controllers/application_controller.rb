@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   before_action :update_signup_params, if: :devise_controller?
 
-  def after_sign_up_path_for(resource)
+  def after_sign_up_path_for(_resource)
     groups_index_path
   end
 
