@@ -29,7 +29,7 @@ class ExpensesController < ApplicationController
 
         @group.expenses << @expense
 
-        format.html { redirect_to group_url(@group), notice: 'Expense was successfully created.' }
+        format.html { redirect_to group_url(@group), notice: 'Transaction was successfully created.' }
         format.json { render :show, status: :created, location: @expense }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -42,7 +42,7 @@ class ExpensesController < ApplicationController
   def update
     respond_to do |format|
       if @expense.update(expense_params)
-        format.html { redirect_to expense_url(@expense), notice: 'Expense was successfully updated.' }
+        format.html { redirect_to expense_url(@expense), notice: 'Transaction was successfully updated.' }
         format.json { render :show, status: :ok, location: @expense }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -56,7 +56,7 @@ class ExpensesController < ApplicationController
     @expense.destroy
 
     respond_to do |format|
-      format.html { redirect_to group_path, notice: 'Expense was successfully destroyed.' }
+      format.html { redirect_to group_path, notice: 'Transaction was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

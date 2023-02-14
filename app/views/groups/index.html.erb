@@ -1,18 +1,24 @@
-<p><%= notice %></p>
-
-<div>
-
-  <h1>GROUPS</h1>
-
-  <div id="groups">
+<nav>
+  <h1>Categories</h1>
+</nav>
+<section class='group-index-page'>
+  <div class='user-info'>
+    <% if user_signed_in? %>
+      <% name = current_user.name %>
+      <% capitalized_name = name.split(" ").map { |word| word.capitalize }.join(" ") %>
+      <p><%= capitalized_name %></p>
+      <%= link_to "Sign out", destroy_user_session_path, data: { turbo_method: :delete } %>
+    <% end %>
+  </div>
+  <p><%= notice %></p>
+  <div id="groups" class='groups'>
     <% @groups.each do |group| %>
       <%= link_to group do %>
         <%= render group %>
       <% end %>
     <% end %>
   </div>
-
-  <div>
-    <%= link_to "NEW GROUP", new_group_path %>
-  </div>
+</section>
+<div class='category-btn'>
+  <%= button_to 'ADD CATEGORY', new_group_path, method: :get %>
 </div>

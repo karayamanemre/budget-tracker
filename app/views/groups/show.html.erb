@@ -1,23 +1,28 @@
-<p><%= notice %></p>
-
-<%= render @group %>
-
-<div>
-<%= button_to "Delete this group", @group, method: :delete %>
-</div>
-
-<h2>Transactions</h2>
-
-<div>
-  <%= link_to "Add New Expense", new_expense_path %>
-</div>
-
-<% @group.expenses.each do |g| %>
-  <div>
-    <div>
-      <%= button_to "Delete this expense", g, method: :delete %>
-      <p><%= g.name %></p>
-    </div>
-    <p>$<%= g.amount %></p>
+<nav>
+  <h1>Transactions</h1>
+</nav>
+<section class='group-show-page'>
+  <p><%= notice %></p>
+  <div class='user-info'>
+    <% if user_signed_in? %>
+      <% name = current_user.name %>
+      <% capitalized_name = name.split(" ").map { |word| word.capitalize }.join(" ") %>
+      <p>User: <%= capitalized_name %></p>
+      <%= link_to "Back", groups_path %>
+      <%= link_to "Sign out", destroy_user_session_path, data: { turbo_method: :delete } %>
+    <% end %>
   </div>
-<% end %>
+  <%= render @group %>
+  <%= button_to "Remove Category", @group, method: :delete, class:'delete-btn' %>
+
+  <% @group.expenses.each do |g| %>
+    <div class='transaction-info'>
+      <p><%= g.name.capitalize %></p>
+      <p>$<%= g.amount %></p>
+      <%= button_to "Remove", g, method: :delete, class:'expense-delete-btn' %>
+    </div>
+  <% end %>
+</section>
+<div class='category-btn'>
+  <%= button_to 'ADD NEW TRANSACTION', new_expense_path, method: :get %>
+</div>
