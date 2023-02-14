@@ -12,12 +12,12 @@
   <%= render @group %>
   <%= button_to "Remove Category", @group, method: :delete, class:'delete-btn' %>
 
-  <% @group.expenses.each do |g| %>
-    <div class='transaction-info'>
-      <p><%= g.name.capitalize %></p>
-      <p>$<%= g.amount %></p>
-      <%= link_to "delete", g, data: { turbo_method: :delete }, class:'material-symbols-outlined' %>
-    </div>
+  <% @group.expenses.order(created_at: :desc).each do |g| %>
+  <div class='transaction-info'>
+    <p><%= g.name.capitalize %></p>
+    <p>$<%= g.amount %></p>
+    <%= link_to "delete", g, data: { turbo_method: :delete }, class:'material-symbols-outlined' %>
+  </div>
   <% end %>
 </section>
 <div class='category-btn'>

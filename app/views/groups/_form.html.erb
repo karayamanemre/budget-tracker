@@ -1,5 +1,5 @@
 <div>
-<%= form_with(model: group) do |form| %>
+<%= form_with(model: group, url: groups_path) do |form| %>
   <% if group.errors.any? %>
     <div>
       <h2><%= pluralize(group.errors.count, "error") %> prohibited this group from being saved:</h2>
