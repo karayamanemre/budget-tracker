@@ -18,8 +18,7 @@ RSpec.describe 'Groups', type: :request do
     end
 
     it 'displays the group name on the page' do
-      group = Group.create(name: 'Group 1',
-                           icon: 'https://png.pngtree.com/element_our/png/20180930/food-icon-design-vector-png_120564.jpg', user: @user)
+      group = Group.create(name: 'Group 1', icon: 'https://png.pngtree.com/element_our/png/20180930/food-icon-design-vector-png_120564.jpg', user: @user)
       get groups_path
       expect(response.body).to include('Group 1')
     end
