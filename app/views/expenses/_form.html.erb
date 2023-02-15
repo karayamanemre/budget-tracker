@@ -18,7 +18,7 @@
   </div>
 
   <div class='field'>
-    <p>Select a category</p>
+    <label>Select a category</label>
     <%= form.select :group_id, @group.all.collect {|u| [u.name.capitalize, u.id] }, class:'input' %>
   </div>
 
