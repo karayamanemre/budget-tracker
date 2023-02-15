@@ -18,8 +18,8 @@
   </div>
 
   <div>
-    <%= form.label :icon %></br>
-    <%= form.text_field :icon %>
+    <%= form.label :icon %><br>
+    <%= form.select :icon, Dir.glob('app/assets/images/icons/*').map { |f| [File.basename(f, '.*'), f] } %>
   </div>
 
   <div>
