@@ -1,6 +1,6 @@
 <div id="<%= dom_id group %>" class='group-item'>
   <%= image_tag("https://raw.githubusercontent.com/karayamanemre/budget-tracker/dev/#{group.icon}") %>
-  <p><%= group.name.capitalize %></p>
+  <p><%= group.name.titleize %></p>
   <p><%= group.created_at.strftime("%d %b %Y") %></p>
   <p>$<%= group.expenses.sum(:amount) %></p>
 </div>

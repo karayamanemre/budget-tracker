@@ -9,6 +9,7 @@
 </nav>
 <section class='group-index-page'>
   <p><%= notice %></p>
+  <p>Total expenses for <%= current_user.name.titleize %>: $<%= @total_expenses %></p>
   <div id="groups" class='groups'>
     <% @groups.each do |group| %>
       <%= link_to group do %>

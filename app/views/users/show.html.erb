@@ -11,7 +11,9 @@
 <p><%= notice %></p>
 <%= render @user %>
 <div>
-  <%= link_to "Edit this user", edit_user_path(@user) %><br><br>
+  <strong>
+    <%= link_to "Edit this user", edit_user_path(@user) %><br><br>
+  </strong>
   <%= form_tag user_path(@user), method: :delete do %>
   <%= hidden_field_tag :_method, :delete %>
   <%= submit_tag "Delete this account", data: { confirm: 'Are you sure?' } %>

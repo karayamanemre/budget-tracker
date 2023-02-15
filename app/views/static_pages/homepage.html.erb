@@ -1,5 +1,13 @@
 <section class="home-page">
-  <h1>Budget Tracker</h1>
-  <%= button_to 'SIGN IN', new_user_session_path, method: :get %>
-  <%= button_to 'SIGN UP', new_user_registration_path, method: :get %>
+  <h1>
+    <span class="material-symbols-outlined">
+      paid
+    </span> Budget Tracker 
+    <span class="material-symbols-outlined">
+        paid
+    </span>
+  </h1>
+  <%= button_to "<span class='material-symbols-outlined'>login</span> SIGN IN".html_safe, new_user_session_path, method: :get, class:'sign-btns' %>
+
+  <%= button_to "<span class='material-symbols-outlined'>how_to_reg</span> SIGN UP".html_safe, new_user_registration_path, method: :get, class:'sign-btns' %>
 </section>

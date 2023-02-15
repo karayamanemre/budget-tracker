@@ -4,6 +4,7 @@ class GroupsController < ApplicationController
   # GET /groups or /groups.json
   def index
     @groups = current_user.groups.all
+    @total_expenses = current_user.groups.joins(:expenses).sum('expenses.amount')
   end
 
   # GET /groups/1 or /groups/1.json

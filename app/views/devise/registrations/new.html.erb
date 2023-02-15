@@ -1,30 +1,43 @@
 <nav>
-  <h1>Budget Tracker</h1>
+  <div>
+    <span class="material-symbols-outlined">
+      paid
+    </span>
+    <h2>Budget Tracker</h2>
+    <span class="material-symbols-outlined">
+        paid
+    </span>
+  </div>
 </nav>
 <section class='sign-up-page'>
-  <h2>Sign Up</h2>
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'form card' }) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
-
-    <div class="field">
-      <%= f.label :name %><br />
-      <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+    <div class="card_header">
+      <span class="material-symbols-outlined">
+        how_to_reg
+      </span>
+      <h2 class="form_heading">Sign up</h2>
     </div>
 
     <div class="field">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      <%= f.label :name %>
+      <%= f.text_field :name, autofocus: true, autocomplete: "name", class:'input' %>
     </div>
 
     <div class="field">
-      <%= f.label :password %><br />
-      <em>(6 characters mininum)</em><br />
-      <%= f.password_field :password, autocomplete: "new-password" %>
+      <%= f.label :email %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class:'input' %>
     </div>
 
     <div class="field">
-      <%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+      <%= f.label :password %>
+      <em>(6 characters mininum)</em>
+      <%= f.password_field :password, autocomplete: "new-password", class:'input' %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class:'input' %>
     </div>
 
     <div class="actions">

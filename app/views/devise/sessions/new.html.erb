@@ -1,25 +1,34 @@
 <nav>
   <div>
+    <span class="material-symbols-outlined">
+      paid
+    </span>
     <h2>Budget Tracker</h2>
+    <span class="material-symbols-outlined">
+        paid
+    </span>
   </div>
 </nav>
 <section class='sign-in-page'>
-  <h3>Sign In</h3>
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="field">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-    </div>
-
-    <div class="field">
-      <%= f.label :password %><br />
-      <%= f.password_field :password, autocomplete: "current-password" %>
-    </div>
-
-    <div class="actions">
-      <%= f.submit "SIGN IN" %>
-    </div>
-  <% end %>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'form card' }) do |f| %>
+  <div class="card_header">
+    <span class="material-symbols-outlined">
+      login
+    </span>
+    <h2 class="form_heading">Sign in</h2>
+  </div>
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:'input' %>
+  </div>
+  <div class="field">
+    <%= f.label :password %>
+    <%= f.password_field :password, autocomplete: "current-password", class:'input' %>
+  </div>
+  <div class="field">
+    <%= f.submit "SIGN IN" %>
+  </div>
+  <% end %> 
   <p>Not registered?</p>
   <%= button_to 'SIGN UP', new_user_registration_path, method: :get %>
 </section>

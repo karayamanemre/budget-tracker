@@ -13,12 +13,15 @@
   <%= button_to "Remove Category", @group, method: :delete, class:'delete-btn' %>
   <% @group.expenses.order(created_at: :desc).each do |g| %>
   <div class='transaction-info'>
-    <p><%= g.name.capitalize %></p>
-    <p>$<%= g.amount %></p>
-    <%= link_to "delete", g, data: { turbo_method: :delete }, class:'material-symbols-outlined' %>
+    <ul>
+      <li><%= g.name.capitalize %></li> 
+      <li><%= g.created_at.strftime("%d %b %Y") %></li>
+      <li>$<%= g.amount %></li>
+      <li><%= link_to "delete", g, data: { turbo_method: :delete }, class:'material-symbols-outlined' %></li>
+    </ul>
   </div>
   <% end %>
 </section>
 <div class='category-btn'>
-  <%= button_to 'ADD NEW TRANSACTION', new_expense_path, method: :get %>
+  <%= button_to 'ADD TRANSACTION', new_expense_path, method: :get %>
 </div>
