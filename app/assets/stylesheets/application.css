@@ -1,34 +1,31 @@
-@import url('https://fonts.cdnfonts.com/css/proxima-nova-2');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
 *,
 *::before,
 *::after {
   margin: 0;
   padding: 0;
-  font-family: 'Proxima Nova', sans-serif;
+  font-family: 'Lato', sans-serif;
   box-sizing: border-box;
   color: var(--text-color);
 }
 
 :root {
-  --primary-color: #3778c2;
-  --secondary-color: #5fb523;
+  --primary-color: #d9c8c0;
+  --secondary-color: #544e50;
   --text-color: #434b54;
 }
 
 html {
   font-size: 16px;
   color: var(--text-color);
-  background: #f0f3f2;
-}
-
-body {
-  min-height: 100vh;
+  background: #e9e3e3;
+  text-align: center;
 }
 
 img {
-  width: 80px;
-  height: 80px;
+  width: 50px;
+  height: 50px;
 }
 
 h1 {
@@ -50,15 +47,15 @@ p {
 a {
   text-decoration: none;
   color: var(--text-color);
-  font-size: 1rem;
 }
 
 nav {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   background: var(--primary-color);
-  height: 80px;
+  padding: 20px;
+  height: 70px;
   position: fixed;
   top: 0;
   left: 0;
@@ -66,19 +63,36 @@ nav {
   z-index: 2;
 }
 
-nav h1 {
-  color: #fff;
+nav div {
+  position: relative;
+  margin: auto;
 }
 
-.home-page,
+.home-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+  gap: 50px;
+}
+
 .sign-in-page,
-.sign-up-page {
+.sign-up-page,
+.user-show-page,
+.user-edit-page,
+.group-index-page,
+.group-show-page,
+.new-group-page,
+.transaction-page {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  margin-top: 100px;
+  margin-top: 80px;
+  padding: 0 10px;
   gap: 20px;
+  z-index: 1;
 }
 
 .home-page div {
@@ -94,7 +108,7 @@ input[type='submit'] {
   padding: 10px;
   background: var(--secondary-color);
   border: 1px solid #ddd;
-  border-radius: 3px;
+  border-radius: 5px;
   transition: 0.5s;
   color: #fff;
 }
@@ -120,55 +134,32 @@ input,
 select {
   width: 200px;
   padding: 10px;
-}
-
-.group-index-page,
-.group-show-page {
-  margin: 90px 0;
-  padding-bottom: 80px;
-}
-
-.user-info {
-  width: 90%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px;
-  color: #fff;
-}
-
-.user-info a,
-.user-info span {
-  color: #fff;
+  border-radius: 5px;
 }
 
 .groups {
   display: flex;
   flex-direction: column;
+  gap: 10px;
+  width: 100%;
 }
 
-.group-item {
+.group-item,
+.groups a {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 20px;
-  background: #fff;
-  margin: 10px;
+  justify-content: space-around;
+  border-radius: 5px;
+  background: #f5f5f5;
+  width: 100%;
+  border: 1px solid #fff;
+  transition: 0.5s ease-out;
 }
 
-.category-info {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.category-info p {
-  color: #a5a2a2;
-}
-
-.date {
-  font-size: 0.8rem;
-  font-style: italic;
+.group-item:hover,
+.groups a:hover {
+  border-color: var(--secondary-color);
+  box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
 }
 
 .category-btn {
@@ -189,40 +180,33 @@ select {
   height: 60px;
 }
 
-.delete-btn {
-  width: 150px;
-  height: 40px;
-  align-self: center;
-}
-
-.transaction-page {
-  margin-top: 90px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .transaction-info {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px;
+  padding: 10px 20px;
   background: #fff;
-  margin: 10px;
+  width: 100%;
+  border-radius: 5px;
 }
 
-.expense-delete-btn {
-  width: 75px;
-}
+@media (min-width: 700px) {
+  nav {
+    padding: 20px 100px;
+  }
 
-.new-group-page {
-  margin-top: 80px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
+  .groups {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+  }
 
-.new-group-page a {
-  margin: 20px;
+  .group-item,
+  .groups a {
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    height: 255px;
+  }
 }

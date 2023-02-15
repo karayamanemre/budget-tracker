@@ -1,17 +1,16 @@
 <nav>
-  <div class='user-info'>
+  <% if user_signed_in? %>
     <%= link_to "arrow_back", groups_path, class:"material-symbols-outlined" %>
-    <h1>Transactions</h1>
-    <% if user_signed_in? %>
-      <%= link_to "logout", destroy_user_session_path, data: { turbo_method: :delete }, class:"material-symbols-outlined" %>
-    <% end %>
-  </div>
+  <% end %>
+  <h2>Transactions</h2>
+  <% if user_signed_in? %>
+    <%= link_to "logout", destroy_user_session_path, data: { turbo_method: :delete }, class:"material-symbols-outlined" %>
+  <% end %>  
 </nav>
 <section class='group-show-page'>
   <p><%= notice %></p>
   <%= render @group %>
   <%= button_to "Remove Category", @group, method: :delete, class:'delete-btn' %>
-
   <% @group.expenses.order(created_at: :desc).each do |g| %>
   <div class='transaction-info'>
     <p><%= g.name.capitalize %></p>

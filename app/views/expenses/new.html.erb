@@ -1,11 +1,11 @@
 <nav>
-  <div class='user-info'>
+  <% if user_signed_in? %>
     <%= link_to "arrow_back", groups_path, class:"material-symbols-outlined" %>
-    <h1>Transactions</h1>
-    <% if user_signed_in? %>
-      <%= link_to "logout", destroy_user_session_path, data: { turbo_method: :delete }, class:"material-symbols-outlined" %>
-    <% end %>
-  </div>
+  <% end %>
+  <h2>Transactions</h2>
+  <% if user_signed_in? %>
+    <%= link_to "logout", destroy_user_session_path, data: { turbo_method: :delete }, class:"material-symbols-outlined" %>
+  <% end %>  
 </nav>
 <section class='transaction-page'>
   <%= render "form", expense: @expense %>

@@ -1,6 +1,0 @@
-<nav>
-  <%= link_to image_tag(src="https://img.icons8.com/color/256/circled-left-2.png"), groups_path %>
-  <% if user_signed_in? %>
-    <%= link_to "Sign out", destroy_user_session_path, data: { turbo_method: :delete } %>
-  <% end %>
-</nav>

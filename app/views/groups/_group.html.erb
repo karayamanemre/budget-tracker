@@ -1,8 +1,6 @@
 <div id="<%= dom_id group %>" class='group-item'>
-  <%= image_tag("#{group.icon}") %>
-  <div class='category-info'>
-    <p><%= group.name.capitalize %></p>
-    <p class='date'><%= group.created_at.strftime("%d %b %Y") %></p>
-  </div>
+  <%= image_tag(Rails.root.join('app', 'assets', 'images', 'icons', group.icon).to_s) %>
+  <p><%= group.name.capitalize %></p>
+  <p><%= group.created_at.strftime("%d %b %Y") %></p>
   <p>$<%= group.expenses.sum(:amount) %></p>
 </div>

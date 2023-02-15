@@ -1,6 +1,12 @@
-<h1>Edit User Info</h1>
-<%= render "form", user: @user %>
-<div>
-  <%= link_to "Show this user", @user %> |
-  <%= link_to "Back to users", users_path %>
-</div>
+<nav>
+  <% if user_signed_in? %>
+    <%= link_to "arrow_back", @user, class:"material-symbols-outlined" %>
+  <% end %>
+  <h2>Edit User Info</h2>
+  <% if user_signed_in? %>
+    <%= link_to "logout", destroy_user_session_path, data: { turbo_method: :delete }, class:"material-symbols-outlined" %>
+  <% end %>  
+</nav>
+<section class='user-edit-page'>
+  <%= render "form", user: @user %>
+</section>

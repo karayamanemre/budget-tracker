@@ -1,7 +1,21 @@
+<nav>
+  <% if user_signed_in? %>
+    <%= link_to "arrow_back", groups_path, class:"material-symbols-outlined" %>
+  <% end %>
+  <h2>User Info</h2>
+  <% if user_signed_in? %>
+    <%= link_to "logout", destroy_user_session_path, data: { turbo_method: :delete }, class:"material-symbols-outlined" %>
+  <% end %>  
+</nav>
+<section class='user-show-page'>
 <p><%= notice %></p>
 <%= render @user %>
 <div>
-  <%= link_to "Edit this user", edit_user_path(@user) %> |
-  <%= link_to "Back to users", users_path %>
-  <%= button_to "Delete this user", @user, method: :delete %>
+  <%= link_to "Edit this user", edit_user_path(@user) %><br><br>
+  <%= form_tag user_path(@user), method: :delete do %>
+  <%= hidden_field_tag :_method, :delete %>
+  <%= submit_tag "Delete this account", data: { confirm: 'Are you sure?' } %>
+<% end %>
+
 </div>
+</section>
