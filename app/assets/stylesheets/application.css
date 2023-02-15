@@ -197,7 +197,7 @@ select {
 
   .groups {
     flex-direction: row;
-    flew-wrap: wrap;
+    flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
   }
