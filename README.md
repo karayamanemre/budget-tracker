@@ -152,6 +152,7 @@ If you like this project, kindly give it a star⭐️
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
 - Original design idea by [Gregoire Vella on Behance.](https://www.behance.net/gregoirevella)
+- [Icons](https://icons8.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
