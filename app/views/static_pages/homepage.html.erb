@@ -1,13 +1,14 @@
-<section class="home-page">
-  <h1>
-    <span class="material-symbols-outlined">
-      paid
-    </span> Budget Tracker 
-    <span class="material-symbols-outlined">
-        paid
-    </span>
-  </h1>
-  <%= button_to "<span class='material-symbols-outlined'>login</span> SIGN IN".html_safe, new_user_session_path, method: :get, class:'sign-btns' %>
-
-  <%= button_to "<span class='material-symbols-outlined'>how_to_reg</span> SIGN UP".html_safe, new_user_registration_path, method: :get, class:'sign-btns' %>
+<section class="bg-gray-100 min-h-screen flex flex-col items-center justify-center">
+  <div class="w-full max-w-md px-4 sm:px-0 bg-white p-8 rounded-lg shadow-md">
+    <h1 class="text-4xl font-bold mb-8 text-center">
+      Budget Tracker
+    </h1>
+        <p class="text-lg mb-8 text-center text-gray-600">
+      A user-friendly app to help you track your expenses.
+    </p>
+    <div class="flex flex-col sm:flex-row items-center justify-center">
+      <%= button_to "SIGN IN", new_user_session_path, method: :get, class: 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-lg mb-4 sm:mb-0 sm:mr-2 transition duration-300 ease-in-out' %>
+      <%= button_to "SIGN UP", new_user_registration_path, method: :get, class: 'bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-6 rounded-lg sm:ml-2 transition duration-300 ease-in-out' %>
+    </div>
+  </div>
 </section>

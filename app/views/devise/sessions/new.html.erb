@@ -1,34 +1,25 @@
-<nav>
-  <div>
-    <span class="material-symbols-outlined">
-      paid
-    </span>
-    <h2>Budget Tracker</h2>
-    <span class="material-symbols-outlined">
-        paid
-    </span>
+<nav class="bg-blue-600 p-4">
+  <div class="flex items-center justify-center">
+    <h2 class="text-white text-2xl font-semibold">Budget Tracker</h2>
   </div>
 </nav>
-<section class='sign-in-page'>
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'form card' }) do |f| %>
-  <div class="card_header">
-    <span class="material-symbols-outlined">
-      login
-    </span>
-    <h2 class="form_heading">Sign in</h2>
-  </div>
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:'input' %>
-  </div>
-  <div class="field">
-    <%= f.label :password %>
-    <%= f.password_field :password, autocomplete: "current-password", class:'input' %>
-  </div>
-  <div class="field">
-    <%= f.submit "SIGN IN" %>
-  </div>
-  <% end %> 
-  <p>Not registered?</p>
-  <%= button_to 'SIGN UP', new_user_registration_path, method: :get %>
+<section class="bg-gray-100 min-h-screen flex flex-col items-center justify-center">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'w-full max-w-md p-8 bg-white rounded-lg shadow-md' }) do |f| %>
+    <div class="text-center mb-6">
+      <h2 class="text-2xl font-bold">Sign in</h2>
+    </div>
+    <div class="mb-4">
+      <%= f.label :email, class: 'block text-gray-700 text-sm font-bold mb-2' %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none focus:border-blue-500' %>
+    </div>
+    <div class="mb-6">
+      <%= f.label :password, class: 'block text-gray-700 text-sm font-bold mb-2' %>
+      <%= f.password_field :password, autocomplete: "current-password", class: 'w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none focus:border-blue-500' %>
+    </div>
+    <div class="mb-4">
+      <%= button_tag "SIGN IN", type: 'submit', class: 'w-full px-4 py-2 font-bold text-white bg-blue-500 rounded-full hover:bg-blue-700 focus:outline-none focus:shadow-outline' %>
+    </div>
+  <% end %>
+  <p class="my-2">Not registered?</p>
+  <%= button_to 'SIGN UP', new_user_registration_path, method: :get, class: 'w-full px-4 py-2 font-bold text-white bg-green-500 rounded-full hover:bg-green-700 focus:outline-none focus:shadow-outline' %>
 </section>

@@ -1,27 +1,27 @@
-<nav>
-  <% if user_signed_in? %>
-    <%= link_to "arrow_back", groups_path, class:"material-symbols-outlined" %>
-  <% end %>
-  <h2>Transactions</h2>
-  <% if user_signed_in? %>
-    <%= link_to "logout", destroy_user_session_path, data: { turbo_method: :delete }, class:"material-symbols-outlined" %>
-  <% end %>  
-</nav>
-<section class='group-show-page'>
-  <p><%= notice %></p>
-  <%= render @group %>
-  <%= button_to "Remove Category", @group, method: :delete, class:'delete-btn' %>
-  <% @group.expenses.order(created_at: :desc).each do |g| %>
-  <div class='transaction-info'>
-    <ul>
-      <li><%= g.name.capitalize %></li> 
-      <li><%= g.created_at.strftime("%d %b %Y") %></li>
-      <li>$<%= g.amount %></li>
-      <li><%= link_to "delete", g, data: { turbo_method: :delete }, class:'material-symbols-outlined' %></li>
-    </ul>
+<nav class="bg-blue-600 p-4">
+  <div class="container mx-auto flex items-center justify-between">
+    <% if user_signed_in? %>
+      <%= link_to "Back", groups_path, class: "text-white text-2xl" %>
+    <% end %>
+    <h2 class="text-white text-2xl font-semibold">Transactions</h2>
+    <% if user_signed_in? %>
+      <%= link_to "Logout", destroy_user_session_path, data: { turbo_method: :delete }, class: "text-white text-2xl" %>
+    <% end %>
   </div>
+</nav>
+<section class="bg-gray-100 min-h-screen flex flex-col items-center justify-center my-auto py-16">
+  <p class="text-center mb-2"><%= notice %></p>
+  <%= render @group %>
+  <%= button_to "Remove Category", @group, method: :delete, class: 'bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full my-6' %>
+  <% @group.expenses.order(created_at: :desc).each do |g| %>
+    <div class="bg-white rounded-lg shadow-md p-2 m-2 w-2/3">
+      <ul class="flex items-center justify-between">
+        <li class="font-bold w-1/4"><%= g.name.capitalize %></li>
+        <li><%= g.created_at.strftime("%d %b %Y") %></li>
+        <li>$<%= g.amount %></li>
+        <li><%= link_to "Delete", g, data: { turbo_method: :delete }, class: 'w-1/4 text-red-500 hover:text-red-700' %></li>
+      </ul>
+    </div>
   <% end %>
+  <%= button_to 'ADD TRANSACTION', new_expense_path, method: :get, class: 'bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full' %>
 </section>
-<div class='category-btn'>
-  <%= button_to 'ADD TRANSACTION', new_expense_path, method: :get %>
-</div>

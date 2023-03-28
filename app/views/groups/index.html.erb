@@ -1,23 +1,24 @@
-<nav>
-  <% if user_signed_in? %>
-    <%= link_to "account_box", user_path(current_user), class:"material-symbols-outlined" %>
-  <% end %>
-  <h2>Categories</h2>
-  <% if user_signed_in? %>
-    <%= link_to "logout", destroy_user_session_path, data: { turbo_method: :delete }, class:"material-symbols-outlined" %>
-  <% end %>
+<nav class="bg-blue-600 p-4">
+  <div class="container mx-auto flex items-center justify-between">
+    <% if user_signed_in? %>
+      <%= link_to "Account", user_path(current_user), class: "text-white text-2xl" %>
+    <% end %>
+    <h2 class="text-white text-2xl font-semibold">Categories</h2>
+    <% if user_signed_in? %>
+      <%= link_to "Logout", destroy_user_session_path, data: { turbo_method: :delete }, class: "text-white text-2xl" %>
+    <% end %>
+  </div>
 </nav>
-<section class='group-index-page'>
-  <p><%= notice %></p>
-  <p>Total expenses for <%= current_user.name.titleize %>: $<%= @total_expenses %></p>
-  <div id="groups" class='groups'>
+<section class="bg-gray-100 h-screen flex flex-col items-center justify-center">
+  <p class="text-center mb-2"><%= notice %></p>
+  <p class="text-center mb-2">Total expenses for <%= current_user.name.titleize %>: $<%= @total_expenses %></p>
+  <div id="groups" class="w-full max-w-md p-8 flex gap-2 items-center justify-center bg-white rounded-lg shadow-md">
     <% @groups.each do |group| %>
       <%= link_to group do %>
         <%= render group %>
       <% end %>
     <% end %>
   </div>
+  <%= button_to 'ADD CATEGORY', new_group_path, method: :get, class: 'bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full mt-2' %>
 </section>
-<div class='category-btn'>
-  <%= button_to 'ADD CATEGORY', new_group_path, method: :get %>
-</div>
+
