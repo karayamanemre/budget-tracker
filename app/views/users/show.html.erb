@@ -10,7 +10,7 @@
   </div>
 </nav>
 <section class="bg-gray-100 min-h-screen flex flex-col items-center justify-center pt-16">
-  <div class="w-full max-w-md p-8 bg-white rounded-lg shadow-md">
+  <div class="w-full max-w-md p-8 bg-white rounded-lg shadow-md flex flex-col items-center">
     <p class="text-center mb-6"><%= notice %></p>
     <%= render @user %>
     <div class="text-center mt-6">
@@ -20,7 +20,7 @@
       <br><br>
       <%= form_tag user_path(@user), method: :delete do %>
         <%= hidden_field_tag :_method, :delete %>
-        <%= submit_tag "Delete this account", class: "bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full", data: { confirm: 'Are you sure?' } %>
+        <%= button_tag "Delete this account", type: "submit", class: "bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full", data: { confirm: 'Are you sure?' } %>
       <% end %>
     </div>
   </div>

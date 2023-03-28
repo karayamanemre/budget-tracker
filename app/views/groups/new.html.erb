@@ -1,13 +1,16 @@
-<nav>
-  <% if user_signed_in? %>
-    <%= link_to "arrow_back", groups_path, class:"material-symbols-outlined" %>
-  <% end %>
-  <h2>Categories</h2>
-  <% if user_signed_in? %>
-    <%= link_to "logout", destroy_user_session_path, data: { turbo_method: :delete }, class:"material-symbols-outlined" %>
-  <% end %>  
-</nav>
-<section class='new-group-page'>
+<nav class="bg-blue-600 p-4">
+  <div class="container mx-auto flex items-center justify-between">
+    <% if user_signed_in? %>
+      <%= link_to "Back", groups_path, class: "text-white text-2xl" %>
+    <% end %>
+    <h2 class="text-white text-2xl font-semibold">Categories</h2>
+    <% if user_signed_in? %>
+      <%= link_to "Logout", destroy_user_session_path, data: { turbo_method: :delete }, class: "text-white text-2xl" %>
+    <% end %>
   </div>
-  <%= render "form", group: @group %>
+</nav>
+<section class="bg-gray-100 min-h-screen flex flex-col items-center justify-center pt-16">
+  <div class="w-full max-w-md p-8 bg-white rounded-lg shadow-md">
+    <%= render "form", group: @group %>
+  </div>
 </section>

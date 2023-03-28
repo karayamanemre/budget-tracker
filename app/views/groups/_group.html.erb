@@ -1,6 +1,8 @@
-<div id="<%= dom_id group %>" class='group-item'>
-  <%= image_tag("https://raw.githubusercontent.com/karayamanemre/budget-tracker/dev/#{group.icon}") %>
-  <p><%= group.name.titleize %></p>
-  <p><%= group.created_at.strftime("%d %b %Y") %></p>
-  <p>$<%= group.expenses.sum(:amount) %></p>
+<div id="<%= dom_id group %>" class="bg-white rounded-lg shadow-md p-4 mb-4 w-full">
+  <div class="flex flex-col items-center">
+    <%= image_tag("https://raw.githubusercontent.com/karayamanemre/budget-tracker/dev/#{group.icon}", class: "w-20 h-20 object-cover mb-2 rounded") %>
+    <p class="text-xl font-semibold mb-1"><%= group.name.titleize %></p>
+    <p class="text-gray-500 mb-1"><%= group.created_at.strftime("%d %b %Y") %></p>
+    <p class="text-lg font-bold">$<%= group.expenses.sum(:amount) %></p>
+  </div>
 </div>

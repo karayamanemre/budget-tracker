@@ -1,14 +1,14 @@
-<div id="<%= dom_id user %>">
-  <p>
+<div id="<%= dom_id user %>" class="space-y-2">
+  <p class="font-semibold">
     <strong>Name:</strong>
-    <%= user.name %>
+    <span class="text-gray-600"><%= user.name %></span>
   </p>
-  <p>
+  <p class="font-semibold">
     <strong>Email:</strong>
-    <%= user.email %>
+    <span class="text-gray-600"><%= user.email %></span>
   </p>
-  <p>
+  <p class="font-semibold">
     <strong>Register date:</strong>
-    <%= user.created_at %>
+    <span class="text-gray-600"><%= user.created_at %></span>
   </p>
 </div>
